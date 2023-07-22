@@ -312,7 +312,7 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   config.jwt do |jwt|
-    jwt.secret = 'fe1e99f9f1bfb0583a14d33b4864d6cd576ac6f06fb59f11e50b2e3d46449231da660fa5789ece8021ff6f96e9d559583d778007a517410b5089d2d3bada'
+    jwt.secret = Rails.application.credentials.devise_jwt_secret_key!
     jwt.dispatch_requests = [
       ['POST', %r{^/login$}]
     ]
